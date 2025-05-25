@@ -31,7 +31,16 @@ public enum ErrorStatus implements BaseErrorCode {
 
     RESTAURANT_NOT_FOUND(HttpStatus.BAD_REQUEST,"RESTAURANT4001", "레스토랑이 없습니다."),
 
-    MISSION_NOT_FOUND(HttpStatus.BAD_REQUEST,"MISSION4001",  "미션이 없습니다.");
+    MISSION_NOT_FOUND(HttpStatus.BAD_REQUEST,"MISSION4001",  "미션이 없습니다."),
+
+    //인증관련
+    AUTH_TOKEN_REQUIRED(HttpStatus.UNAUTHORIZED, "AUTH003", "access 토큰을 주세요!"),
+    AUTH_TOKEN_EXPIRED(HttpStatus.UNAUTHORIZED, "AUTH004", "access 토큰 만료"),
+    AUTH_TOKEN_INVALID_FORMAT(HttpStatus.UNAUTHORIZED, "AUTH006", "access 토큰 모양이 이상함"),
+    //페이지 관련
+    INVALID_PAGE_NUMBER(HttpStatus.BAD_REQUEST, "PAGE4001", "page 값은 1 이상이어야 합니다.");
+
+
 
     private final HttpStatus httpStatus;
     private final String code;

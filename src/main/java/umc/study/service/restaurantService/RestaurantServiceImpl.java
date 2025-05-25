@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import umc.study.domain.Restaurant;
-import umc.study.reposistory.restaurantRepository.RestaurantRepository;
+import umc.study.repository.restaurantRepository.RestaurantRepository;
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor

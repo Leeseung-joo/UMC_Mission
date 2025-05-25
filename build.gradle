@@ -28,7 +28,7 @@ dependencies {
 	// build.gradle
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 
-	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.7.0'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
 
 	// queryDSL
 	implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'

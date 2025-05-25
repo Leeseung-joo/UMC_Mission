@@ -1,4 +1,4 @@
-package umc.study.reposistory.missionHistoryRepository;
+package umc.study.repository.missionHistoryRepository;
 
 import jakarta.transaction.Transactional;
 import java.util.List;
@@ -15,20 +15,5 @@ public interface MissionHistoryRepository extends JpaRepository<MissionHistory,L
     @Query("DELETE FROM MissionHistory mh WHERE mh.member = :member")
     void deleteByMember(Member member);
 
-    @Query("""
-    SELECT 
-        m.id,
-        m.title,
-        r.name,
-        mh.status,
-        mh.price,
-        mh.deadLine,
-        mh.point
-    
-    FROM MissionHistory mh
-    JOIN mh.misson m
-    JOIN m.restaurant r
-    WHERE mh.member.id = :memberId
-""")
     List<MissionHistory> findAllByMemberId(Long memberId);
 }

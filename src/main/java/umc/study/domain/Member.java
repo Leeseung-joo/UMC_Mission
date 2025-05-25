@@ -70,6 +70,8 @@ public class Member extends BaseEntity {
     @Column(nullable = false)
     private Long completedMissionCount;
 
+    
+
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<MissionHistory> memberMissonList = new ArrayList<>();
 

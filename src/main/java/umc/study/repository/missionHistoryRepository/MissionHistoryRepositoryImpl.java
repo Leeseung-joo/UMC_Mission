@@ -1,10 +1,11 @@
-package umc.study.reposistory.missionHistoryRepository;
+package umc.study.repository.missionHistoryRepository;
 
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
+import umc.study.domain.QMission;
 import umc.study.domain.QRestaurant;
 import umc.study.mapping.QMissionHistory;
 import umc.study.web.response.MemberMissionResponse;

@@ -7,9 +7,9 @@ import umc.study.apiPayload.exception.handler.RestaurantHandler;
 import umc.study.converter.RestuarantConverter;
 import umc.study.domain.Restaurant;
 import umc.study.domain.Review;
-import umc.study.reposistory.restaurantRepository.RestaurantRepository;
-import umc.study.reposistory.reviewRepository.ReviewRepository;
-import umc.study.web.request.ReviewRequestDTO;
+import umc.study.repository.restaurantRepository.RestaurantRepository;
+import umc.study.repository.reviewRepository.ReviewRepository;
+import umc.study.web.dto.ReviewRequestDTO;
 
 @Service
 @RequiredArgsConstructor

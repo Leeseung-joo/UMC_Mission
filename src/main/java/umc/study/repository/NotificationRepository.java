@@ -1,4 +1,4 @@
-package umc.study.reposistory;
+package umc.study.repository;
 
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,4 +1,4 @@
-package umc.study.web.response;
+package umc.study.web.dto;
 
 import java.util.List;
 import lombok.AllArgsConstructor;

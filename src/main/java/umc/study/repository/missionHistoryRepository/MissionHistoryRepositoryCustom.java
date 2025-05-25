@@ -1,4 +1,4 @@
-package umc.study.reposistory.missionHistoryRepository;
+package umc.study.repository.missionHistoryRepository;
 
 import java.util.List;
 import umc.study.web.response.MemberMissionResponse;

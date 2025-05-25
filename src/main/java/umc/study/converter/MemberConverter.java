@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 import umc.study.domain.Food;
 import umc.study.domain.Member;
 import umc.study.mapping.FavoriteFood;
-import umc.study.web.request.JoinDTO;
-import umc.study.web.response.JoinResultDTO;
+import umc.study.web.dto.JoinDTO;
+import umc.study.web.dto.JoinResultDTO;
 
 public class MemberConverter {
 
