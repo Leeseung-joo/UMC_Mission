@@ -7,7 +7,6 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -67,7 +66,7 @@ public class MemberController {
             @RequestParam (name = "page") @ValidPage Integer page,
             @PathVariable (name = "member-id") @ExistMember Long memberId){
 
-        int zeroBasedPage = page - 1;
+        int zeroBasedPage = page - 1;   //1페이지로 전달된 값을 0으로 처리하는 커스텀 어노테이션을 못 만들겠음, 컨트롤러에서 처리함
         MyReviewResponseDTO result = memberQueryService.getReviewList(memberId,zeroBasedPage);
         return ApiResponse.onSuccess(result);
 
