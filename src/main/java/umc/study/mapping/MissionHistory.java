@@ -56,6 +56,10 @@ public class MissionHistory extends BaseEntity {
     @JoinColumn(name = "member_id", nullable = false)
     private Member member;
 
+    public void changeStatus(Status newStatus) {
+        this.status = status;
+    }
+
 
 
 

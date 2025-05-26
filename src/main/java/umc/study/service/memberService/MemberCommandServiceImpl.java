@@ -34,4 +34,6 @@ public class MemberCommandServiceImpl implements MemberCommandService {
         memberFavoriteFood.forEach(memberPrefer -> {memberPrefer.setMember(newMember);});
         return memberRepository.save(newMember);
     }
+
+
 }
