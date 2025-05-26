@@ -11,8 +11,8 @@ import umc.study.apiPayload.ApiResponse;
 import umc.study.converter.RestuarantConverter;
 import umc.study.domain.Review;
 import umc.study.service.restaurantService.RestuarantCommandService;
-import umc.study.web.dto.ReviewRequestDTO;
-import umc.study.web.dto.ReviewResponseDTO;
+import umc.study.web.request.ReviewRequestDTO;
+import umc.study.web.response.ReviewResponseDTO;
 
 @RestController
 @RequiredArgsConstructor

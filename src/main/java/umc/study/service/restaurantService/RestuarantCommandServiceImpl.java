@@ -9,7 +9,7 @@ import umc.study.domain.Restaurant;
 import umc.study.domain.Review;
 import umc.study.repository.restaurantRepository.RestaurantRepository;
 import umc.study.repository.reviewRepository.ReviewRepository;
-import umc.study.web.dto.ReviewRequestDTO;
+import umc.study.web.request.ReviewRequestDTO;
 
 @Service
 @RequiredArgsConstructor

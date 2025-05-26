@@ -1,4 +1,4 @@
-package umc.study.web.dto;
+package umc.study.web.request;
 
 import java.util.List;
 import lombok.Getter;

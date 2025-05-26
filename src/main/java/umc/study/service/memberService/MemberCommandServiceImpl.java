@@ -12,7 +12,7 @@ import umc.study.domain.Member;
 import umc.study.mapping.FavoriteFood;
 import umc.study.repository.FoodRepository;
 import umc.study.repository.memberRepository.MemberRepository;
-import umc.study.web.dto.JoinDTO;
+import umc.study.web.request.JoinDTO;
 
 @Service
 @RequiredArgsConstructor

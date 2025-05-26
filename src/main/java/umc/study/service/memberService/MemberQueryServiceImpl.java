@@ -9,7 +9,7 @@ import umc.study.domain.Member;
 import umc.study.domain.Review;
 import umc.study.repository.memberRepository.MemberRepository;
 import umc.study.repository.reviewRepository.ReviewRepository;
-import umc.study.web.dto.MyReviewResponseDTO;
+import umc.study.web.response.MyReviewResponseDTO;
 
 @Service
 @RequiredArgsConstructor

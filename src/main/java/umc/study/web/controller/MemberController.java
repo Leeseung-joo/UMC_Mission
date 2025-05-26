@@ -26,9 +26,9 @@ import umc.study.service.memberService.MemberCommandService;
 import umc.study.service.memberService.MemberQueryService;
 import umc.study.validation.annotation.ExistMember;
 import umc.study.validation.annotation.ValidPage;
-import umc.study.web.dto.JoinDTO;
-import umc.study.web.dto.JoinResultDTO;
-import umc.study.web.dto.MyReviewResponseDTO;
+import umc.study.web.request.JoinDTO;
+import umc.study.web.response.JoinResultDTO;
+import umc.study.web.response.MyReviewResponseDTO;
 
 @RestController
 @RequiredArgsConstructor

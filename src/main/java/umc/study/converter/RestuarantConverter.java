@@ -2,8 +2,8 @@ package umc.study.converter;
 
 import umc.study.domain.Restaurant;
 import umc.study.domain.Review;
-import umc.study.web.dto.ReviewRequestDTO;
-import umc.study.web.dto.ReviewResponseDTO;
+import umc.study.web.request.ReviewRequestDTO;
+import umc.study.web.response.ReviewResponseDTO;
 
 public class RestuarantConverter {
 

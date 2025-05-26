@@ -1,12 +1,10 @@
 package umc.study.converter;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.data.domain.Page;
 import umc.study.domain.Review;
-import umc.study.web.dto.MyReviewResponseDTO;
-import umc.study.web.dto.MyReviewResponseDTO.ReviewDTO;
+import umc.study.web.response.MyReviewResponseDTO;
 
 public class ReviewConverter {
     public static MyReviewResponseDTO.ReviewDTO toReviewDTO(Review review) {

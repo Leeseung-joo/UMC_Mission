@@ -1,4 +1,4 @@
-package umc.study.web.dto;
+package umc.study.web.response;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.experimental.WithBy;
 
 @Builder
 @NoArgsConstructor

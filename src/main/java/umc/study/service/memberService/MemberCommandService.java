@@ -1,9 +1,7 @@
 package umc.study.service.memberService;
 
-import java.util.List;
 import umc.study.domain.Member;
-import umc.study.web.dto.JoinDTO;
-import umc.study.web.dto.MyReviewResponseDTO;
+import umc.study.web.request.JoinDTO;
 
 public interface MemberCommandService {
     Member joinMember(JoinDTO request);
