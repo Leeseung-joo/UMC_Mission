@@ -19,6 +19,7 @@ import umc.study.apiPayload.ApiResponse;
 import umc.study.service.MemberMissionService;
 import umc.study.service.missionService.MissionHistoryQueryService;
 import umc.study.validation.annotation.ExistMember;
+import umc.study.validation.annotation.ValidMissionStatus;
 import umc.study.validation.annotation.ValidPage;
 import umc.study.web.response.MemberMissionResponse;
 import umc.study.web.response.MissionInProgressResponseDTO;
@@ -32,7 +33,7 @@ public class MemberMissionController {
     private final MemberMissionService memberMissionService;
     private final MissionHistoryQueryService missionHistoryQueryService;
 
-    @GetMapping("/{member-id}/missions")
+    @GetMapping("/{member-id}/mission")
     public ResponseEntity<List<MemberMissionResponse>> getMemberMissions(@PathVariable("member-id") Long memberId){
         List<MemberMissionResponse> MemberMissionResponse = memberMissionService.getMemberMissions(memberId);
         return ResponseEntity.ok(MemberMissionResponse);
@@ -51,7 +52,7 @@ public class MemberMissionController {
     })
     public ApiResponse<MissionInProgressResponseDTO> getMissionsInProgress(
             @ExistMember @PathVariable("member-id") Long memberId,
-            @RequestParam(name = "status") String status,
+            @RequestParam(name = "status") @ValidMissionStatus String status,
             @RequestParam (name = "page") @ValidPage Integer page){
 
                 missionHistoryQueryService.getMissionInProgressList(memberId,status,page);

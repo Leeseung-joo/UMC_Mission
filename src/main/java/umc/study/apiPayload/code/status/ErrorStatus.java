@@ -38,7 +38,9 @@ public enum ErrorStatus implements BaseErrorCode {
     AUTH_TOKEN_EXPIRED(HttpStatus.UNAUTHORIZED, "AUTH004", "access 토큰 만료"),
     AUTH_TOKEN_INVALID_FORMAT(HttpStatus.UNAUTHORIZED, "AUTH006", "access 토큰 모양이 이상함"),
     //페이지 관련
-    INVALID_PAGE_NUMBER(HttpStatus.BAD_REQUEST, "PAGE4001", "page 값은 1 이상이어야 합니다.");
+    INVALID_PAGE_NUMBER(HttpStatus.BAD_REQUEST, "PAGE4001", "page 값은 1 이상이어야 합니다."),
+    //미션 상태 관련
+    INVALID_STATUS(HttpStatus.BAD_REQUEST, "STATUS4001", "status 값은 IN_PROGRESS이어야 합니다.");
 
 
 
