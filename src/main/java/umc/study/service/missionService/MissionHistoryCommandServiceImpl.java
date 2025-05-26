@@ -10,9 +10,9 @@ import umc.study.converter.MissionHistoryConverter;
 import umc.study.domain.Member;
 import umc.study.domain.Mission;
 import umc.study.mapping.MissionHistory;
-import umc.study.reposistory.memberRepository.MemberRepository;
-import umc.study.reposistory.missionHistoryRepository.MissionHistoryRepository;
-import umc.study.reposistory.missionRepository.MissionRepository;
+import umc.study.repository.memberRepository.MemberRepository;
+import umc.study.repository.missionHistoryRepository.MissionHistoryRepository;
+import umc.study.repository.missionRepository.MissionRepository;
 import umc.study.web.request.CreateMissionHistoryRequest;
 import umc.study.web.response.CreateMissionHistoryResponse;
 

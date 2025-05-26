@@ -5,4 +5,5 @@ import umc.study.web.request.JoinDTO;
 
 public interface MemberCommandService {
     Member joinMember(JoinDTO request);
+
 }

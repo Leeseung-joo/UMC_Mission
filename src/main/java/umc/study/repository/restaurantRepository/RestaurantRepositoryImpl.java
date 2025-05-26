@@ -1,4 +1,4 @@
-package umc.study.reposistory.restaurantRepository;
+package umc.study.repository.restaurantRepository;
 
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.jpa.impl.JPAQueryFactory;

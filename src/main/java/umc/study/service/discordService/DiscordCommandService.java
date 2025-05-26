@@ -1,5 +1,6 @@
 package umc.study.service.discordService;
 
+import jakarta.annotation.PostConstruct;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
@@ -14,6 +15,11 @@ public class DiscordCommandService {
 
     @Value("${webhook.discord.url}")
     private String webhookUrl;
+    @PostConstruct
+    public void init() {
+        System.out.println("🔧 Loaded Discord Webhook URL: " + webhookUrl);
+    }
+
 
     public void sendAlert(String content) {
         WebClient.create()

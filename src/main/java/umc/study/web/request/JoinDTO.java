@@ -4,7 +4,6 @@ import java.util.List;
 import lombok.Getter;
 import org.locationtech.jts.geom.Point;
 import umc.study.domain.Gender;
-import umc.study.mapping.FavoriteFood;
 import umc.study.validation.annotation.ExistCategories;
 
 @Getter

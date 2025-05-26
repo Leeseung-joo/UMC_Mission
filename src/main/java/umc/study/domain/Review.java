@@ -61,4 +61,8 @@ public class Review extends BaseEntity {
     @OneToMany(mappedBy = "parent",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Review> replies = new ArrayList<>(); //리뷰에 달린 답글 목록
 
+    @ManyToOne
+    @JoinColumn(name = "member_id", nullable = false)
+    private Member member;
+
 }

@@ -6,7 +6,7 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import umc.study.apiPayload.code.status.ErrorStatus;
-import umc.study.reposistory.FoodRepository;
+import umc.study.repository.FoodRepository;
 import umc.study.validation.annotation.ExistCategories;
 
 

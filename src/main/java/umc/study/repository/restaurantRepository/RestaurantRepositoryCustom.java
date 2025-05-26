@@ -1,4 +1,4 @@
-package umc.study.reposistory.restaurantRepository;
+package umc.study.repository.restaurantRepository;
 
 import java.util.List;
 import umc.study.domain.Restaurant;
