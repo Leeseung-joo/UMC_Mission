@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.GeometryFactory;
 import org.springframework.data.domain.Page;
 import umc.study.domain.Food;
 import umc.study.domain.Member;
@@ -11,7 +13,10 @@ import umc.study.domain.Mission;
 import umc.study.mapping.FavoriteFood;
 import umc.study.mapping.MissionHistory;
 import umc.study.web.request.JoinDTO;
+import umc.study.web.request.LoginRequestDTO;
+import umc.study.web.request.MemberInfoDTO;
 import umc.study.web.response.JoinResultDTO;
+import umc.study.web.response.LoginResultDTO;
 import umc.study.web.response.MissionInProgressResponseDTO;
 import umc.study.web.response.MissionInProgressResponseDTO.MissionInProgressDTO;
 
@@ -31,6 +36,9 @@ public class MemberConverter {
                 .gender(request.getGender())
                 .birthdate(request.getBirthdate())
                 .location(request.getLocation())
+                .role(request.getRole())
+                .password(request.getPassword())
+                .location(new GeometryFactory().createPoint(new Coordinate(0, 0)))
                 .favoriteFoodList(new ArrayList<>())
                 .build();
     }
@@ -68,6 +76,20 @@ public class MemberConverter {
                 .build();
     }
 
+    public static LoginResultDTO toLoginResultDTO(Long id, String accessToken) {
+        return LoginResultDTO.builder()
+                .memberId(id)
+                .accessToken(accessToken)
+                .build();
+
+    }
+    public static MemberInfoDTO toMemberInfoDTO(Member member) {
+        return MemberInfoDTO.builder()
+                .name(member.getName())
+                .email(member.getEmail())
+                .gender(member.getEmail())
+                .build();
+    }
 }
 
 

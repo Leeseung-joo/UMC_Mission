@@ -37,12 +37,15 @@ public enum ErrorStatus implements BaseErrorCode {
     AUTH_TOKEN_REQUIRED(HttpStatus.UNAUTHORIZED, "AUTH003", "access 토큰을 주세요!"),
     AUTH_TOKEN_EXPIRED(HttpStatus.UNAUTHORIZED, "AUTH004", "access 토큰 만료"),
     AUTH_TOKEN_INVALID_FORMAT(HttpStatus.UNAUTHORIZED, "AUTH006", "access 토큰 모양이 이상함"),
+    INVALID_TOKEN(HttpStatus.UNAUTHORIZED, "AUTH007", "잘못된 토큰입니다."),
     //페이지 관련
     INVALID_PAGE_NUMBER(HttpStatus.BAD_REQUEST, "PAGE4001", "page 값은 1 이상이어야 합니다."),
     //미션 상태 관련
-    INVALID_STATUS(HttpStatus.BAD_REQUEST, "STATUS4001", "status 값은 IN_PROGRESS이어야 합니다.");
+    INVALID_STATUS(HttpStatus.BAD_REQUEST, "STATUS4001", "status 값은 IN_PROGRESS이어야 합니다."),
 
+    IN_PROGRESS_MISSION_NOT_FOUND(HttpStatus.BAD_REQUEST, "MISSION4002", "진행 중인 미션이 없습니다."),
 
+    INVALID_PASSWORD(HttpStatus.UNAUTHORIZED, "AUTH008", "패스워드가 일치하지 않습니다.");
 
     private final HttpStatus httpStatus;
     private final String code;

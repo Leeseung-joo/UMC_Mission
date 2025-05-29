@@ -16,7 +16,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import umc.study.common.BaseEntity;
-import umc.study.domain.EmdArea;
+
 import umc.study.domain.Member;
 import umc.study.domain.Terms;
 

@@ -7,4 +7,5 @@ import umc.study.domain.Member;
 public interface MemberRepository extends JpaRepository<Member, Long> {
     Optional<Member> findById(Long id);
     boolean existsById(Long id);
+    Optional<Member> findByEmail(String email);
 }

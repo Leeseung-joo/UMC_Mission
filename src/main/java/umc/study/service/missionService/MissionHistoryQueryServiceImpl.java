@@ -6,6 +6,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import umc.study.converter.MemberConverter;
 import umc.study.domain.Member;
+import umc.study.domain.Status;
 import umc.study.mapping.MissionHistory;
 import umc.study.repository.memberRepository.MemberRepository;
 import umc.study.repository.missionHistoryRepository.MissionHistoryRepository;
@@ -17,9 +18,9 @@ public class MissionHistoryQueryServiceImpl implements MissionHistoryQueryServic
 
     private final MissionHistoryRepository missionHistoryRepository;
 
-    public MissionInProgressResponseDTO getMissionInProgressList(Long memberId, String status, Integer page) {
+    public MissionInProgressResponseDTO getMissionInProgressList(Long memberId, Status status, Integer page) {
 
-        Page<MissionHistory> inProgressMissionPage = missionHistoryRepository.findAllByMemberIdAndStatus(memberId,status, PageRequest.of(page, 10));
+        Page<MissionHistory> inProgressMissionPage = missionHistoryRepository.findAllByMemberIdAndStatus(memberId, status, PageRequest.of(page, 10));
         return MemberConverter.toMissionInProgressResponseDTO(inProgressMissionPage);
     }
 

@@ -49,9 +49,6 @@ public class Restaurant extends BaseEntity {
     @Column(nullable = false, columnDefinition = "POINT")
     private Point location;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "area_id", nullable = false)
-    private EmdArea emdArea;
 
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<RestaurantImage> restaurantImageList = new ArrayList<>();

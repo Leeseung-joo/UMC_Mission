@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import umc.study.domain.Member;
+import umc.study.domain.Status;
 import umc.study.mapping.MissionHistory;
 
 public interface MissionHistoryRepository extends JpaRepository<MissionHistory,Long> {
@@ -18,5 +19,6 @@ public interface MissionHistoryRepository extends JpaRepository<MissionHistory,L
     void deleteByMember(Member member);
 
     List<MissionHistory> findAllByMemberId(Long memberId);
-    Page<MissionHistory> findAllByMemberIdAndStatus(Long memberId, String status, PageRequest pageRequest);
+    Page<MissionHistory> findAllByMemberIdAndStatus(Long memberId, Status status, PageRequest pageRequest);
+    List<MissionHistory> findAllByMemberAndStatus(Member member, Status status);
 }

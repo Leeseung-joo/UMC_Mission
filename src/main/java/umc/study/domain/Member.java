@@ -24,7 +24,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.GeometryFactory;
 import umc.study.common.BaseEntity;
+import umc.study.domain.enums.Role;
 import umc.study.mapping.FavoriteFood;
 import umc.study.mapping.MissionHistory;
 import umc.study.mapping.UserTerms;
@@ -51,6 +54,12 @@ public class Member extends BaseEntity {
     @Column(nullable = false, length = 100)
     private String email;
 
+    @Column(nullable = false)
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Gender gender;
@@ -60,15 +69,16 @@ public class Member extends BaseEntity {
 
     @Column(length = 13)
     private String phoneNumber;
-
-    @Column(nullable = false, columnDefinition = "POINT")
-    private Point location;
-
+    @Builder.Default
+    @Column(columnDefinition = "POINT")
+    private Point location = new GeometryFactory().createPoint(new Coordinate(0, 0));
+    @Builder.Default
     @Column(nullable = false)
-    private LocalDateTime locationUpdatedAt;
+    private LocalDateTime locationUpdatedAt = LocalDateTime.now();
 
+    @Builder.Default
     @Column(nullable = false)
-    private Long completedMissionCount;
+    private int completedMissionCount = 0;
 
     
 
@@ -90,12 +100,11 @@ public class Member extends BaseEntity {
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<RegionReward> regionRewardList = new ArrayList<>();
 
-    @OneToOne
-    @JoinColumn(name = "emd_areas_id", nullable = false)
-    private EmdArea emdArea;
 
 
-
+    public void encodePassword(String password){
+        this.password = password;
+    }
 
 
 

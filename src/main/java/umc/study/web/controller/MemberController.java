@@ -6,6 +6,8 @@ import io.swagger.v3.oas.annotations.Parameters;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +29,10 @@ import umc.study.service.memberService.MemberQueryService;
 import umc.study.validation.annotation.ExistMember;
 import umc.study.validation.annotation.ValidPage;
 import umc.study.web.request.JoinDTO;
+import umc.study.web.request.LoginRequestDTO;
+import umc.study.web.request.MemberInfoDTO;
 import umc.study.web.response.JoinResultDTO;
+import umc.study.web.response.LoginResultDTO;
 import umc.study.web.response.MyReviewResponseDTO;
 
 @RestController
@@ -40,13 +45,29 @@ public class MemberController {
     private final MemberQueryService memberQueryService;
     private final MemberCommandService memberCommandService;
 
+    @PostMapping("/login")
+    @Operation(summary = "유저 로그인 API",description = "유저가 로그인하는 API입니다.")
+    public ApiResponse<LoginResultDTO> login(@RequestBody @Valid LoginRequestDTO request) {
+        return ApiResponse.onSuccess(memberCommandService.loginMember(request));
+    }
+
+    @GetMapping("/info")
+    @Operation(summary = "유저 내 정보 조회 API - 인증 필요",
+            description = "유저가 내 정보를 조회하는 API입니다.",
+            security = { @SecurityRequirement(name = "JWT TOKEN") }
+    )
+    public ApiResponse<MemberInfoDTO> getMyInfo(HttpServletRequest request) {
+        return ApiResponse.onSuccess(memberQueryService.getMemberInfo(request));
+    }
+
+
     @DeleteMapping("/{member-id}")
     public ResponseEntity<Void> deleteMember(@PathVariable Long memberId) {
         memberService.deleteMember(memberId);
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/")
+    @PostMapping("/join")
     public ApiResponse<JoinResultDTO> join(@RequestBody @Valid JoinDTO request){
         Member member = memberCommandService.joinMember(request);
         return ApiResponse.onSuccess(MemberConverter.toJoinResultDTO(member));
